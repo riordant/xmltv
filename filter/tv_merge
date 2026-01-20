@@ -376,7 +376,7 @@ sub write_newxml {
 			my $xmlout = $tpp->write( \%xml, 'UTF-8' );
 			$xmlout =~ s/^(<\?xml.*>)/$1\n<!DOCTYPE tv SYSTEM "xmltv.dtd">\n/;
 			open OUT, "> $outfile"  or die "Failed to open $outfile for writing";
-			printf OUT $xmlout;
+			print OUT $xmlout;
 			close OUT;
 		} else {
 			$tpp->writefile( $outfile, \%xml, 'UTF-8' );
